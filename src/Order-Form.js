@@ -4,10 +4,20 @@ import axios from "axios";
 
 const OrderForm = () => {
 
+    // 1. inject state from props
+
+    // 2. onSubmit function
+
+    // 3. onChange function
 
 // add value and onChange to each label child
   return (
     <form id="pizza-form">
+
+        <h2>Order Pizza</h2>
+
+        {/* 4. submit button - disabled */}
+
         {/* Text Input */}
         <label>Name
             <input id="name-input"
@@ -61,9 +71,6 @@ const OrderForm = () => {
                 name='special-text'
             />
         </label>
-
-      
-
     </form>
   );
 };

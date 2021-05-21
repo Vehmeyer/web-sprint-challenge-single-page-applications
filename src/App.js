@@ -5,8 +5,36 @@ import './App.css';
 import OrderForm from "./Order-Form";
 import Home from "./Home";
 
-const App = () => {
 
+// Initial States
+const initialFormValues = {
+  name: '',
+  size: '',
+  sausage: false,
+  pepperoni: false,
+  bacon: false,
+  ham: false,
+  specialText: '',
+}
+const initialFormErrors = {
+  name: '',
+  size: '',
+}
+// const initialOrder = []
+const initialDisabled = true
+
+
+
+
+
+const App = () => {
+// States
+
+// Helpers
+
+// Event Handlers
+
+// Side Effects
 
 
   return (
