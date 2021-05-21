@@ -4,6 +4,8 @@ import axios from "axios";
 import './App.css';
 import OrderForm from "./Order-Form";
 import Home from "./Home";
+import * as yup from 'yup';
+import schema from './validation/formSchema';
 
 
 // Initial States
@@ -33,6 +35,26 @@ const [formErrors, setFormErrors] = useState(initialFormErrors)
 const [disabled, setDisabled] = useState(initialDisabled)
 
 // Helpers
+const postNewOrder = newOrder => {
+  axios.post('https://reqres.in/api/orders', newOrder)
+    .then(res => {
+      setOrder(res.data)
+    })
+    .catch(err => {
+      alert("Please complete order")
+    })
+    .finally(() => {
+      setFormValues(initialFormValues)
+    })
+}
+
+// Validation
+const validate = (name, value) => {
+  yup.reach(schema, name)
+    .validate(value)
+    .then(() => setFormErrors({...formErrors, [name]: ''}))
+    .catch(err => setFormErrors({...formErrors, [name]: err.errors[0]}))
+}
 
 // Event Handlers
 
