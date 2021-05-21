@@ -38,7 +38,7 @@ const OrderForm = (props) => {
         <div className="form-group inputs">
           {/* Text Input */}
           <label>
-            Name:
+           <b>Name: </b>
             <input
               id="name-input"
               type="text"
@@ -52,7 +52,7 @@ const OrderForm = (props) => {
 
         {/* Dropdown */}
         <label>
-          Size:
+          <b>Size: </b> 
           <select
             id="size-dropdown"
             name="size"
@@ -70,7 +70,7 @@ const OrderForm = (props) => {
         {/* Checkboxes */}
         <br></br>
         <div className="form-group checkboxes">
-          <label>Toppings: </label>
+          <label><b>Toppings: </b></label>
           <br></br>
           <label>
             Sausage
@@ -117,7 +117,7 @@ const OrderForm = (props) => {
         {/* Text Input */}
         <div className="form-group inputs">
           <label>
-            Special Instructions:
+            <b>Special Instructions: </b>
             <input
               id="special-text"
               type="text"
@@ -130,5 +130,5 @@ const OrderForm = (props) => {
       </div>
     </form>
   );
-};
+}; 
 export default OrderForm;
