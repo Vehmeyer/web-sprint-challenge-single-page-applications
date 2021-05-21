@@ -24,7 +24,7 @@ const initialFormErrors = {
 }
 
 // verify if initialOrder should be empty object vs. array
-const initialOrder = {}
+const initialOrder = []
 const initialDisabled = true
 
 const App = () => {
@@ -57,9 +57,28 @@ const validate = (name, value) => {
 }
 
 // Event Handlers
+const inputChange = (name, value) => {
+  validate(name, value)
+  setFormValues({
+    ...formValues,
+    [name]: value
+  })
+}
+
+const formSubmit = () => {
+  const newOrder = {
+    name: formValues.name.trim(),
+    size: formValues.size.trim(),
+    toppings: ['sausage', 'pepperoni', 'bacon', 'ham'].filter(topping => formValues[topping]),
+    special: formValues.specialText.trim()
+  }
+  postNewOrder(newOrder)
+}
 
 // Side Effects
-
+useEffect(() => {
+  schema.isValid(formValues).then(valid => setDisabled(!valid))
+}, [formValues])
 
   return (
     <div>
@@ -74,7 +93,13 @@ const validate = (name, value) => {
             <Home />
           </Route> */}
           <Route path='/pizza'>
-            <OrderForm />
+            <OrderForm 
+              values={formValues}
+              change={inputChange}
+              submit={formSubmit}
+              disabled={disabled}
+              errors={formErrors}
+            />
           </Route>
 
     </div>
