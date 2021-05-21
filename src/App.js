@@ -20,15 +20,17 @@ const initialFormErrors = {
   name: '',
   size: '',
 }
-// const initialOrder = []
+
+// verify if initialOrder should be empty object vs. array
+const initialOrder = {}
 const initialDisabled = true
-
-
-
-
 
 const App = () => {
 // States
+const [order, setOrder] = useState(initialOrder)
+const [formValues, setFormValues] = useState(initialFormValues)
+const [formErrors, setFormErrors] = useState(initialFormErrors)
+const [disabled, setDisabled] = useState(initialDisabled)
 
 // Helpers
 
