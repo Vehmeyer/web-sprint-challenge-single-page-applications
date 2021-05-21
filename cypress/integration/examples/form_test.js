@@ -17,7 +17,7 @@ describe('Pizza Ordering Form App', () => {
     const pepperoniCheckBox = () => cy.get('input[name="pepperoni"]')
     const baconCheckBox = () => cy.get('input[name="bacon"]')
     const hamCheckBox = () => cy.get('input[name="ham"]')
-    const specialInput = () => cy.get('input[name="specialText"]')
+    const specialInput = () => cy.get('input[name="special"]')
 
     it('can type in name input', () => {
         nameInput()
@@ -72,10 +72,5 @@ describe('Pizza Ordering Form App', () => {
             submitBtn().should("not.be.disabled")
 
     })
-
-    // it('confirm submit button is disabled', () => {
-    //     submitBtn()
-    //         .should("be.disabled")
-    // })
 
 })

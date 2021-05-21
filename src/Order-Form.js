@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const OrderForm = (props) => {
 
@@ -24,7 +24,7 @@ const OrderForm = (props) => {
     }
 
   return (
-    <form id="pizza-form">
+    <form id="pizza-form" onSubmit={onSubmit}>
 
         <h2>Order Pizza</h2>
         <button id="order-button" disabled={disabled}>SUBMIT for PIZZA!!</button>
@@ -97,7 +97,7 @@ const OrderForm = (props) => {
         <label>Special Instructions: 
             <input id="special-text"
                 type='text'
-                name='specialText'
+                name='special'
                 value={values.specialText}
                 onChange={onChange}
             />

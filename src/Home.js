@@ -13,11 +13,10 @@ export default function Home() {
     <div className="home-wrapper">
       <button
         onClick={routeToOrderForm}
-        // className='md-button shop-button'
+        className='md-button shop-button'
       >
-        Order Now!
+        Order PIZZA!
       </button>
-
       <img
         className="home-image"
         src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"

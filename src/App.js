@@ -16,7 +16,7 @@ const initialFormValues = {
   pepperoni: false,
   bacon: false,
   ham: false,
-  specialText: '',
+  special: '',
 }
 const initialFormErrors = {
   name: '',
@@ -36,12 +36,9 @@ const [disabled, setDisabled] = useState(initialDisabled)
 
 // Helpers
 const postNewOrder = newOrder => {
-  axios.post('https://reqres.in/api/orders', newOrder)
+  axios.post("https://reqres.in/api/orders", newOrder)
     .then(res => {
-      debugger
-      console.log(res)
-      console.log(res.data)
-      setOrder(res.data)
+      setOrder([res.data, ...order])
     })
     .catch(err => {
       alert("Please complete order")
@@ -72,8 +69,12 @@ const formSubmit = () => {
   const newOrder = {
     name: formValues.name.trim(),
     size: formValues.size.trim(),
-    toppings: ['sausage', 'pepperoni', 'bacon', 'ham'].filter(topping => formValues[topping]),
-    special: formValues.specialText.trim()
+    sausage: formValues.sausage,
+    pepperoni: formValues.pepperoni,
+    bacon: formValues.bacon,
+    ham: formValues.ham,
+    // toppings: ['sausage', 'pepperoni', 'bacon', 'ham'].filter(topping => formValues[topping]),
+    special: formValues.special.trim()
   }
   postNewOrder(newOrder)
 }
