@@ -64,6 +64,18 @@ nav {
   align-items: center;
 }
 
+.home-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.shop-button.md-button {
+  margin: 10%;
+  width: 115px;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

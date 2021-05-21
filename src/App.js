@@ -92,9 +92,10 @@ useEffect(() => {
           <Link to='/pizza' id="order-pizza">Order</Link>
         </div>
       </nav>
-          {/* <Route path='/'>
+          <Route exact path='/'>
             <Home />
-          </Route> */}
+          </Route>
+
           <Route path='/pizza'>
             <OrderForm 
               values={formValues}
