@@ -23,12 +23,11 @@ const initialFormErrors = {
   size: '',
 }
 
-// verify if initialOrder should be empty object vs. array
 const initialOrder = []
 const initialDisabled = true
 
 const App = () => {
-// States
+// State Slices
 const [order, setOrder] = useState(initialOrder)
 const [formValues, setFormValues] = useState(initialFormValues)
 const [formErrors, setFormErrors] = useState(initialFormErrors)
@@ -73,7 +72,6 @@ const formSubmit = () => {
     pepperoni: formValues.pepperoni,
     bacon: formValues.bacon,
     ham: formValues.ham,
-    // toppings: ['sausage', 'pepperoni', 'bacon', 'ham'].filter(topping => formValues[topping]),
     special: formValues.special.trim()
   }
   postNewOrder(newOrder)
@@ -96,7 +94,6 @@ useEffect(() => {
           <Route exact path='/'>
             <Home />
           </Route>
-
           <Route path='/pizza'>
             <OrderForm 
               values={formValues}
@@ -106,7 +103,6 @@ useEffect(() => {
               errors={formErrors}
             />
           </Route>
-
     </div>
   );
 };

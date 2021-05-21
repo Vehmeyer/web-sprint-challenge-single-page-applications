@@ -24,84 +24,110 @@ const OrderForm = (props) => {
     }
 
   return (
-    <form id="pizza-form" onSubmit={onSubmit}>
-
+    <form className="form container" id="pizza-form" onSubmit={onSubmit}>
+      <div className="form-group submit">
         <h2>Order Pizza</h2>
-        <button id="order-button" disabled={disabled}>SUBMIT for PIZZA!!</button>
-
+        <button id="order-button" disabled={disabled}>
+          SUBMIT for PIZZA!!
+        </button>
         <div>
-            <div>{errors.name}</div>
-            <div>{errors.size}</div>
+          <div>{errors.name}</div>
+          <div>{errors.size}</div>
         </div>
-
-        {/* Text Input */}
-        <label>Name: 
-            <input id="name-input"
-                type='text'
-                name='name'
-                value={values.name}
-                onChange={onChange}
+        <br></br>
+        <div className="form-group inputs">
+          {/* Text Input */}
+          <label>
+            Name:
+            <input
+              id="name-input"
+              type="text"
+              name="name"
+              value={values.name}
+              onChange={onChange}
             />
-        </label>
+          </label>
+        </div>
+        <br></br>
 
         {/* Dropdown */}
-        <label>Size: 
-            <select id="size-dropdown"
-                name='size'
-                value={values.size}
-                onChange={onChange}
-            >
-                <option value=''>--Select Size--</option>
-                <option value='small'>Small</option>
-                <option value='medium'>Medium</option>
-                <option value='large'>Large</option>
-            </select>    
+        <label>
+          Size:
+          <select
+            id="size-dropdown"
+            name="size"
+            value={values.size}
+            onChange={onChange}
+          >
+            <option value="">--Select Size--</option>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+          </select>
         </label>
+        <br></br>
 
         {/* Checkboxes */}
-        <label>Toppings: </label>
-        <label>Sausage
+        <br></br>
+        <div className="form-group checkboxes">
+          <label>Toppings: </label>
+          <br></br>
+          <label>
+            Sausage
             <input
-                type='checkbox'
-                name='sausage'
-                checked={values.sausage}
-                onChange={onChange}
+              type="checkbox"
+              name="sausage"
+              checked={values.sausage}
+              onChange={onChange}
             />
-        </label>
-        <label>Pepperoni
+          </label>
+          <br></br>
+          <label>
+            Pepperoni
             <input
-                type='checkbox'
-                name='pepperoni'
-                checked={values.pepperoni}
-                onChange={onChange}
+              type="checkbox"
+              name="pepperoni"
+              checked={values.pepperoni}
+              onChange={onChange}
             />
-        </label>
-        <label>Bacon
+          </label>
+          <br></br>
+          <label>
+            Bacon
             <input
-                type='checkbox'
-                name='bacon'
-                checked={values.bacon}
-                onChange={onChange}
+              type="checkbox"
+              name="bacon"
+              checked={values.bacon}
+              onChange={onChange}
             />
-        </label>
-        <label>Ham
+          </label>
+          <br></br>
+          <label>
+            Ham
             <input
-                type='checkbox'
-                name='ham'
-                checked={values.ham}
-                onChange={onChange}
+              type="checkbox"
+              name="ham"
+              checked={values.ham}
+              onChange={onChange}
             />
-        </label>
+          </label>
+        </div>
+        <br></br>
 
         {/* Text Input */}
-        <label>Special Instructions: 
-            <input id="special-text"
-                type='text'
-                name='special'
-                value={values.specialText}
-                onChange={onChange}
+        <div className="form-group inputs">
+          <label>
+            Special Instructions:
+            <input
+              id="special-text"
+              type="text"
+              name="special"
+              value={values.special}
+              onChange={onChange}
             />
-        </label>
+          </label>
+        </div>
+      </div>
     </form>
   );
 };
