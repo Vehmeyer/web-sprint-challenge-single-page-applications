@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Link } from "react-router-dom";
+// import { Route, Link } from "react-router-dom";
 // import axios from "axios";
 
 const OrderForm = (props) => {
@@ -25,7 +25,6 @@ const OrderForm = (props) => {
         change(name, valuesToUse)
     }
 
-// add value and onChange to each label child
   return (
     <form id="pizza-form">
 
@@ -38,7 +37,7 @@ const OrderForm = (props) => {
         </div>
 
         {/* Text Input */}
-        <label>Name
+        <label>Name: 
             <input id="name-input"
                 type='text'
                 name='name'
@@ -48,7 +47,7 @@ const OrderForm = (props) => {
         </label>
 
         {/* Dropdown */}
-        <label>Size
+        <label>Size: 
             <select id="size-dropdown"
                 name='size'
                 value={values.size}
@@ -62,6 +61,7 @@ const OrderForm = (props) => {
         </label>
 
         {/* Checkboxes */}
+        <label>Toppings: </label>
         <label>Sausage
             <input
                 type='checkbox'
@@ -96,7 +96,7 @@ const OrderForm = (props) => {
         </label>
 
         {/* Text Input */}
-        <label>Special Instructions
+        <label>Special Instructions: 
             <input id="special-text"
                 type='text'
                 name='specialText'

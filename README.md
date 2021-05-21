@@ -33,15 +33,15 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
 1. In 1-2 sentences, explain what React's `useRouteMatch` hook is used for.
-
+The useRouteMatch hook lets build nested paths for your app so you can change a URL parameter and not have to change the entire URL. It allows you to use ${url} instead of typing out redundant links, making your code cleaner and less susceptible to errors.
 
 
 1. How would you explain form validation to someone who has never programmed before?
-
+Form validation allows you to place guard rails in your forms to try prevent users from inputting and submitting bad data. You can define a validation schema that outlines what the form should look like, and rules to trigger error messages if users aren't inputting data in the form as you desire it to be entered.
 
 
 1. In 1-2 sentences, define end to end testing.
-
+End-to-end testing simulates how users might interact with an app. It focuses on all the interactions users might have with an app, such as clicking buttons, scrolling, submitting information, etc. It allows you to look for bugs and edge cases that need to be considered.
 
 
 ## Instructions
@@ -63,7 +63,7 @@ Your finished project must include all of the following requirements:
 - [-] A order form that has a "/pizza" route and shows the form
 - [-] A form with an id of "pizza-form"
 - [-] A name text input field with an id of "name-input"
-- [ ] Validation for name and the error message is "name must be at least 2 characters" (Use this exact error message to make sure tests pass)
+- [-] Validation for name and the error message is "name must be at least 2 characters" (Use this exact error message to make sure tests pass)
 - [-] A dropdown for pizza size with an id of "size-dropdown"
 - [-] A checklist for toppings - at least 4 (hint: name each separately!)
 - [-] Text input for special instructions with an id of "special-text"

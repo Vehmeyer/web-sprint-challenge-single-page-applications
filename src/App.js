@@ -38,6 +38,9 @@ const [disabled, setDisabled] = useState(initialDisabled)
 const postNewOrder = newOrder => {
   axios.post('https://reqres.in/api/orders', newOrder)
     .then(res => {
+      debugger
+      console.log(res)
+      console.log(res.data)
       setOrder(res.data)
     })
     .catch(err => {
